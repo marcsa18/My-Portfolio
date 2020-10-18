@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+/* Tailwind */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+/* body properties */
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 220vh;
+    background-color: #875E73;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* navigation */
+
+nav{
+    padding: 8px;
+    
+}
+
+.logo{
+    float: left;
+    padding: 8px;
+    margin-left: 16px;
+    margin-top: 8px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.logo a{
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+}
+
+nav ul li:not(:first-child){
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: aliceblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+nav ul li a:hover{
+    color: #F5506C;
+}
+
+/* input checked effects */
+/* input checked properties have to stay outside of media queries */
+
+#nav:checked + .nav-btn{
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i{
+    background-color: aliceblue;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1){
+    transform: translateY(6px) rotate(180deg);
+    background-color: aliceblue;
+}
+
+#nav:checked + .nav-btn i:nth-child(2){
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3){
+    transform: translateY(-6px) rotate(90deg);
+    background-color: aliceblue;
+}
+
+#nav:checked ~ .nav-wrapper{
+    z-index: 9990;
+    opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* input display */
+
+.hidden {
+    display: none;
+}
+
+/* Section */
+
+#heading{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    background-color: #875E73;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#heading h1{
+    color: white;
+    top: 10vh;
+    left: 10%;
+    position: relative;
+    font-size: 4em;
+    font-family: 'Oswald', sans-serif;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-self: center;
+    animation: fadein 2s;
+}
+
+@keyframes fadein{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#heading h4{
+    color: white;
+    width: 70%;
+    top: 30vh;
+    left: 10%;
+    position: relative;
+    font-size: 1.5em;
+    font-family: 'Quicksand', sans-serif;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    text-align: center;
+    justify-self: center;
+    animation: fadein 2s;
+}
+
+svg{
+    width: 50%;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Skills Section */
+
+#main-body{
+    width: 100%;
+    height: 120vh;
+    background-color: #875E73;
+}
+
+#main-body svg{
+    width: 100%;
+    display: flex;
+    align-self: flex-end
+}
+
+
+#main-body h1{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+#skills{
+    padding-top: 3vh;
+    width: 70%;
+    opacity: 1;
+}
+
+.skill-tech{
+    position: relative;
+    left: 30px; 
+    top: 4px;
+    float: left;
+    
+}
+
+.skill-tech h2{
+    width: 100%;
+}
+
+.skill-tech li{
+    list-style: none;
+}
+
+.skill-soft{
+  position: relative;
+  left: 20%;
+
+}
+
+.skill-soft li{
+    list-style: none;
+}
+
+#skills h2{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#skills p{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+
+/* Work Preview */
+
+#showcase-preview{
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+#showcase-preview h1{
+    color: white;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.showcase-container{
+    text-align: center;
+    margin-top: 20vh;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.gamerfy{
+    background-color: #FCA919;
+    width: 50%;
+    align-self: center;
+}
+
+.Pure_Illustrator{
+    width: 50%;
+    background-color: #6D7795;
+    align-self: center;
+    margin-top: 2%;
+}
+
+.wordpress_clothing{
+    width: 50%;
+    background-color: #F5506C;
+    align-self: center;
+    margin-top: 2%;
+}
+
+.Vacation{
+    width: 50%;
+    background-color: #2077A0;
+    align-self: center;
+    margin-top: 2%;
+}
+
+
+
+
+/* footer */
+
+#main-footer{
+    width: 100%;
+    height: 8vh;
+    background-color: #f2f2f2;
+}
+
+#main-footer p{
+    color: #875E73;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}

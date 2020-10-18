@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+/* Core Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: white;
+}
+
+/* body properties */
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #875E73;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* navigation */
+
+nav{
+  padding: 8px;
+  
+}
+
+.logo{
+  float: left;
+  padding: 8px;
+  margin-left: 16px;
+  margin-top: 8px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.logo a{
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+
+nav ul li:not(:first-child){
+  margin-left: 48px;
+}
+
+nav ul li:last-child {
+  margin-right: 24px;
+}
+
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: aliceblue;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+nav ul li a:hover{
+  color: #F5506C;
+}
+
+/* input checked effects */
+/* input checked properties have to stay outside of media queries */
+
+#nav:checked + .nav-btn{
+  transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i{
+  background-color: aliceblue;
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1){
+  transform: translateY(6px) rotate(180deg);
+  background-color: aliceblue;
+}
+
+#nav:checked + .nav-btn i:nth-child(2){
+  opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3){
+  transform: translateY(-6px) rotate(90deg);
+  background-color: aliceblue;
+}
+
+#nav:checked ~ .nav-wrapper{
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* input display */
+
+.hidden {
+  display: none;
+}
+
+/* Title Card */
+header{
+    width: 100%;
+    height: 100vh;
+}
+.title-card{
+    color: white;
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    top: 20vh;
+    left: 3%;
+}
+
+svg{
+  width: 100%;
+  position: relative;
+  top: 48vh;
+}
+
+/* Project Container */
+#Project-container{
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 2fr 2fr 2fr;
+  width: 100%;
+  height: 400vh;
+  background-color: white;
+}
+
+.project-showcase{
+    height: 1fr;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around ;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    margin-top: 10%;
+}
+
+#project-showcase-2{
+  width: 100%;
+  height: 1fr;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+#project-showcase-3{
+  width: 100%;
+  height: 1fr;
+  display: flex;
+  justify-content: space-around;
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+
+
+
+.property-card
+{
+  height:28em;
+  width:24em;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+  position: relative;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+  height:16em;
+  width:24em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:12em;
+  width:24em;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:28em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+
+/* Footer */
+
+#main-footer-project{
+  width: 100%;
+  height: 8vh;
+  background-color: white;
+}
+
+#main-footer-project p{
+  color: #875E73;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+
+/* Optional
+
+.property-image-title
+{
+text-align:center;
+position:Relative;
+top:30%;
+opacity:0;
+transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+color:black;
+font-size:1.2em;
+}
+
+.property-card:hover .property-image-title
+{
+opacity:1;
+}
+
+*/
+
+@media screen and (max-width: 1200px) {
+  .project-showcase{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  .property-card.Pure{
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+  #project-showcase-2{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  .property-card.ML{
+    display: flex;
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+  #project-showcase-3{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
+
+  #property-card.shop{
+    display: flex;
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+}
+
+@media screen and (max-width: 1080px){
+  .property-card
+{
+  height:18em;
+  width:14em;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+  position: relative;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+  height:10em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:10em;
+  width:14em;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.2em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:0.5em;
+  height:0.5em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:28em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+}
+
+@media screen and (max-width: 768px){
+  .project-showcase{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+    margin-left: 35%;
+    margin-bottom: 10%;
+  }
+
+  .property-card.game{
+    display: flex;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .property-card.Pure{
+    display: flex;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  #project-showcase-2{
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    left:15%;
+  }
+
+  .property-card.Innovations{
+    display: flex;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .property-card.ML{
+    display: flex;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+
+  #project-showcase-3{
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    left: 15%;
+  }
+
+  .property-card.clone{
+    display: flex;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .property-card.topshop{
+    display: flex;
+    grid-row: 3/4;
+    grid-column: 1/2;
+  }
+}
