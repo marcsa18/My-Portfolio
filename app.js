@@ -33,3 +33,19 @@ $(window).on("load",function() {
       });
     }).scroll(); //invoke scroll-handler on page-load
   });
+
+//Button functions
+
+var page = document.getElementById("myPage");
+
+var resume = document.getElementById("resumeButton");
+
+resume.onclick = function() {
+  page.style.display = "block";
+}
+
+window.onclick = function(event) {
+  if (event.target == page) {
+    page.style.display = "none";
+  }
+}
